@@ -1,0 +1,71 @@
+body {
+    background: rgb(74,70,255);
+    background: linear-gradient(180deg, rgba(74,70,255,1) 0%, rgba(80,85,252,1) 21%, rgba(126,197,232,1) 100%);
+}
+
+.login-input {
+    background-color: white;
+}
+
+#footer {
+    width:100%;
+    background-color: #e3eeff;
+  color: black;
+    bottom: 0px;
+    position: fixed;
+ }
+
+ .doctors-main {
+     color: white;
+ }
+
+ .but {
+    padding: 10px;
+    width: 300px;
+    margin: 10px;
+    border-radius: 20px; 
+    color: white; 
+    background-color: rgba(74,70,255,1);
+    font-size: 1.5em;
+ }
+
+ .question {
+     color: white;
+     font-size: 1.5em;
+ }
+
+ .navbar {
+    padding: 0;
+    background-color: #e3eeff;
+    color: black;
+  }
+  
+  .header-nav {
+    display: flex;
+    flex-direction: row;
+  
+    margin-top: 15px;
+  }
+
+  .header-elem {
+    flex: 1;
+    text-align: center;
+    list-style-type: none;
+    font-size: 30px;
+  }
+
+  nav {
+    font-size: 30px;
+}
+
+.social {
+    display: flex;
+    flex-direction: row;
+  }
+
+  .social_icon {
+    flex: 1;
+    text-align: center;
+    list-style-type: none;
+    font-size: 30px;
+  }
