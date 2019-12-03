@@ -17,7 +17,9 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
 
     <link rel="stylesheet" href="index.css" />
-            
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <link rel="stylesheet" href="chat.css" />
 </head>
 <body>
     <header>
@@ -27,10 +29,21 @@
             <ul class="header-nav">
                 <li class="header-elem" id="calendar"><i class="fa fa-calendar" aria-hidden="true"></i></li>
                 <li class="header-elem" id="notif"><i class="fa fa-bell" aria-hidden="true"></i></li>
+                <li class="social_icon" id="profile"><i class="fa fa-user" aria-hidden="true"></i></li>
         </ul>
         </nav>
     </div>
 	<main>
+    <div id="profile-main" style="display: none;">
+        <div class="card" style="margin: 0 float";>
+            <img src="profile.png" alt="John" style="width:100%">
+            <h1>Melissa Romero</h1>
+            <p class="title">21 años</p>
+            <p class="title"></p>
+            <p class="title">Calendario</p>
+            <p class="title">Ciclo</p>
+          </div>
+    </div>
     <div class="questions-main">
             <div class="row" style="height: 15px;">
             </div>
@@ -85,6 +98,205 @@
 
                   
     </div>
+    <div class="notifications-page" style="display: none;">
+        <div class="toast__container" style="width: 100%;">
+            <div class="toast__cell">
+            <div class="toast toast--green">
+              <div class="toast__icon">
+                <svg version="1.1" class="toast__svg" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 512 512" style="enable-background:new 0 0 512 512;" xml:space="preserve">
+            <g><g><path d="M504.502,75.496c-9.997-9.998-26.205-9.998-36.204,0L161.594,382.203L43.702,264.311c-9.997-9.998-26.205-9.997-36.204,0    c-9.998,9.997-9.998,26.205,0,36.203l135.994,135.992c9.994,9.997,26.214,9.99,36.204,0L504.502,111.7    C514.5,101.703,514.499,85.494,504.502,75.496z"></path>
+              </g></g>
+                </svg>
+              </div>
+              <div class="toast__content">
+                <p class="toast__type">Success</p>
+                <p class="toast__message">Se ha agregado una nueva cita con tu ginecóloga exitosamente.</p>
+              </div>
+              <div class="toast__close">
+                <svg version="1.1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 15.642 15.642" xmlns:xlink="http://www.w3.org/1999/xlink" enable-background="new 0 0 15.642 15.642">
+              <path fill-rule="evenodd" d="M8.882,7.821l6.541-6.541c0.293-0.293,0.293-0.768,0-1.061  c-0.293-0.293-0.768-0.293-1.061,0L7.821,6.76L1.28,0.22c-0.293-0.293-0.768-0.293-1.061,0c-0.293,0.293-0.293,0.768,0,1.061  l6.541,6.541L0.22,14.362c-0.293,0.293-0.293,0.768,0,1.061c0.147,0.146,0.338,0.22,0.53,0.22s0.384-0.073,0.53-0.22l6.541-6.541  l6.541,6.541c0.147,0.146,0.338,0.22,0.53,0.22c0.192,0,0.384-0.073,0.53-0.22c0.293-0.293,0.293-0.768,0-1.061L8.882,7.821z"></path>
+            </svg>
+              </div>
+            </div>
+
+            <div class="toast toast--green">
+                <div class="toast__icon">
+                  <svg version="1.1" class="toast__svg" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 512 512" style="enable-background:new 0 0 512 512;" xml:space="preserve">
+              <g><g><path d="M504.502,75.496c-9.997-9.998-26.205-9.998-36.204,0L161.594,382.203L43.702,264.311c-9.997-9.998-26.205-9.997-36.204,0    c-9.998,9.997-9.998,26.205,0,36.203l135.994,135.992c9.994,9.997,26.214,9.99,36.204,0L504.502,111.7    C514.5,101.703,514.499,85.494,504.502,75.496z"></path>
+                </g></g>
+                  </svg>
+                </div>
+                <div class="toast__content">
+                  <p class="toast__type">Oferta</p>
+                  <p class="toast__message">10% de descuento en toallas femeninas</p>
+                </div>
+                <div class="toast__close">
+                  <svg version="1.1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 15.642 15.642" xmlns:xlink="http://www.w3.org/1999/xlink" enable-background="new 0 0 15.642 15.642">
+                <path fill-rule="evenodd" d="M8.882,7.821l6.541-6.541c0.293-0.293,0.293-0.768,0-1.061  c-0.293-0.293-0.768-0.293-1.061,0L7.821,6.76L1.28,0.22c-0.293-0.293-0.768-0.293-1.061,0c-0.293,0.293-0.293,0.768,0,1.061  l6.541,6.541L0.22,14.362c-0.293,0.293-0.293,0.768,0,1.061c0.147,0.146,0.338,0.22,0.53,0.22s0.384-0.073,0.53-0.22l6.541-6.541  l6.541,6.541c0.147,0.146,0.338,0.22,0.53,0.22c0.192,0,0.384-0.073,0.53-0.22c0.293-0.293,0.293-0.768,0-1.061L8.882,7.821z"></path>
+              </svg>
+                </div>
+              </div>
+            
+            
+            <div class="toast toast--blue add-margin">
+              <div class="toast__icon">
+            <svg version="1.1" class="toast__svg" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 32 32" style="enable-background:new 0 0 32 32;" xml:space="preserve">
+            <g>
+              <g id="info">
+                <g>
+                  <path  d="M10,16c1.105,0,2,0.895,2,2v8c0,1.105-0.895,2-2,2H8v4h16v-4h-1.992c-1.102,0-2-0.895-2-2L20,12H8     v4H10z"></path>
+                  <circle  cx="16" cy="4" r="4"></circle>
+                </g>
+              </g>
+            </g>
+            
+                </svg>
+              </div>
+              <div class="toast__content">
+                <p class="toast__type">Info</p>
+                <p class="toast__message">No olvides hacer tu chequeo personal de cáncer de mama esta semana.</p>
+              </div>
+              <div class="toast__close">
+                <svg version="1.1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 15.642 15.642" xmlns:xlink="http://www.w3.org/1999/xlink" enable-background="new 0 0 15.642 15.642">
+              <path fill-rule="evenodd" d="M8.882,7.821l6.541-6.541c0.293-0.293,0.293-0.768,0-1.061  c-0.293-0.293-0.768-0.293-1.061,0L7.821,6.76L1.28,0.22c-0.293-0.293-0.768-0.293-1.061,0c-0.293,0.293-0.293,0.768,0,1.061  l6.541,6.541L0.22,14.362c-0.293,0.293-0.293,0.768,0,1.061c0.147,0.146,0.338,0.22,0.53,0.22s0.384-0.073,0.53-0.22l6.541-6.541  l6.541,6.541c0.147,0.146,0.338,0.22,0.53,0.22c0.192,0,0.384-0.073,0.53-0.22c0.293-0.293,0.293-0.768,0-1.061L8.882,7.821z"></path>
+            </svg>
+              </div>
+            </div>
+            
+            <div class="toast toast--yellow add-margin">
+              <div class="toast__icon">
+            <svg version="1.1" class="toast__svg" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 301.691 301.691" style="enable-background:new 0 0 301.691 301.691;" xml:space="preserve">
+            <g>
+              <polygon points="119.151,0 129.6,218.406 172.06,218.406 182.54,0  "></polygon>
+              <rect x="130.563" y="261.168" width="40.525" height="40.523"></rect>
+            </g>
+                </svg>
+              </div>
+              <div class="toast__content">
+                <p class="toast__type">Success</p>
+                <p class="toast__message">Se acerca tu ciclo menstrual. Aquí un par de recomendaciones</p>
+              </div>
+              <div class="toast__close">
+                <svg version="1.1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 15.642 15.642" xmlns:xlink="http://www.w3.org/1999/xlink" enable-background="new 0 0 15.642 15.642">
+              <path fill-rule="evenodd" d="M8.882,7.821l6.541-6.541c0.293-0.293,0.293-0.768,0-1.061  c-0.293-0.293-0.768-0.293-1.061,0L7.821,6.76L1.28,0.22c-0.293-0.293-0.768-0.293-1.061,0c-0.293,0.293-0.293,0.768,0,1.061  l6.541,6.541L0.22,14.362c-0.293,0.293-0.293,0.768,0,1.061c0.147,0.146,0.338,0.22,0.53,0.22s0.384-0.073,0.53-0.22l6.541-6.541  l6.541,6.541c0.147,0.146,0.338,0.22,0.53,0.22c0.192,0,0.384-0.073,0.53-0.22c0.293-0.293,0.293-0.768,0-1.061L8.882,7.821z"></path>
+            </svg>
+              </div>
+            </div>
+
+            <div class="toast toast--blue add-margin">
+                <div class="toast__icon">
+              <svg version="1.1" class="toast__svg" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 32 32" style="enable-background:new 0 0 32 32;" xml:space="preserve">
+              <g>
+                <g id="info">
+                  <g>
+                    <path  d="M10,16c1.105,0,2,0.895,2,2v8c0,1.105-0.895,2-2,2H8v4h16v-4h-1.992c-1.102,0-2-0.895-2-2L20,12H8     v4H10z"></path>
+                    <circle  cx="16" cy="4" r="4"></circle>
+                  </g>
+                </g>
+              </g>
+              
+                  </svg>
+                </div>
+                <div class="toast__content">
+                  <p class="toast__type">Info</p>
+                  <p class="toast__message">Tus resultados de prueba de VIH están listos. Clic para ver.</p>
+                </div>
+                <div class="toast__close">
+                  <svg version="1.1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 15.642 15.642" xmlns:xlink="http://www.w3.org/1999/xlink" enable-background="new 0 0 15.642 15.642">
+                <path fill-rule="evenodd" d="M8.882,7.821l6.541-6.541c0.293-0.293,0.293-0.768,0-1.061  c-0.293-0.293-0.768-0.293-1.061,0L7.821,6.76L1.28,0.22c-0.293-0.293-0.768-0.293-1.061,0c-0.293,0.293-0.293,0.768,0,1.061  l6.541,6.541L0.22,14.362c-0.293,0.293-0.293,0.768,0,1.061c0.147,0.146,0.338,0.22,0.53,0.22s0.384-0.073,0.53-0.22l6.541-6.541  l6.541,6.541c0.147,0.146,0.338,0.22,0.53,0.22c0.192,0,0.384-0.073,0.53-0.22c0.293-0.293,0.293-0.768,0-1.061L8.882,7.821z"></path>
+              </svg>
+                </div>
+              </div>
+            </div>
+            </div>
+    </div>
+    <div class="calendar-page" style="display: none;">
+        <div class="calendar light" style="width: 100%;">
+            <div class="calendar_header">
+              <h1 class = "header_title">¡Hola, Melissa!</h1>
+              <p class="header_copy"> Tu calendario</p>
+            </div>
+            <div class="calendar_plan">
+              <div class="cl_plan">
+                <div class="cl_title">Hoy</div>
+                <div class="cl_copy">Martes 3<br>Diciembre del 2018</div>
+                <div class="cl_add">
+                  <i class="fas fa-plus"></i>
+                </div>
+              </div>
+            </div>
+            <div class="calendar_events">
+              <p class="ce_title">Eventos</p>
+              <div class="event_item">
+                <div class="ei_Dot dot_active"></div>
+                <div class="ei_Title">Miércoles 4 de diciembre 10:30 am</div>
+                <div class="ei_Copy">Cita con Psicóloga Martha Sordia</div>
+              </div>
+              <div class="event_item">
+                <div class="ei_Dot"></div>
+                <div class="ei_Title">Miércoles 11 de diciembre 12:00 pm</div>
+                <div class="ei_Copy">Cita con Ginecóloga Daniela Uribe</div>
+              </div>
+              <div class="event_item">
+                <div class="ei_Dot"></div>
+                <div class="ei_Title">Jueves 20 de enero 10:00 am</div>
+                <div class="ei_Copy">Cita con Psicóloga Martha Sordia</div>
+              </div>
+              <div class="event_item">
+                <div class="ei_Dot"></div>
+                <div class="ei_Title">Viernes 21 de enero 11:00 am</div>
+                <div class="ei_Copy">Revisión Cancer de Mama</div>
+              </div>
+              <div class="event_item">
+                <div class="ei_Dot"></div>
+                <div class="ei_Title">3 de febrero 12:00pm</div>
+                <div class="ei_Copy">Cita con Ginecóloga Daniela Uribe</div>
+              </div>
+            </div>
+          </div>
+    </div>
+    <div id="chat-main" class="chat-class" style="display: none;">
+        <div class="container_" style="width: 100%">
+            <div class="messaging">
+                  <div class="inbox_msg">
+                    <div class="mesgs">
+                      <div class="msg_history">
+                        <div class="incoming_msg">
+                          <div class="incoming_msg_img"> <img src="https://ptetutorials.com/images/user-profile.png" alt="sunil"> </div>
+                          <div class="received_msg">
+                            <div class="received_withd_msg">
+                              <p>¡Hola!</p>
+                              <span class="time_date"> 11:01 AM    |    Ayer</span></div>
+                          </div>
+                        </div>
+                        <div class="incoming_msg">
+                          <div class="incoming_msg_img"> <img src="https://ptetutorials.com/images/user-profile.png" alt="sunil"> </div>
+                          <div class="received_msg">
+                            <div class="received_withd_msg">
+                              <p>¿En qué puedo ayudarte?</p>
+                              <span class="time_date"> 11:05 AM    |    Ayer</span></div>
+                          </div>
+                        </div>
+                        <div class="outgoing_msg">
+                          <div class="sent_msg">
+                            <p>Hola</p>
+                            <span class="time_date"> 11:01 AM    |    Hoy</span> </div>
+                        </div>
+                        <div id="dynamic-chat">
+
+                        </div>
+                      </div>
+                      <div class="type_msg">
+                        <div class="input_msg_write">
+                          <input type="text" id="chattext" class="write_msg" placeholder="Type a message" />
+                          <button class="msg_send_btn" id="chatbutton" type="button"><i class="fa fa-paper-plane-o" aria-hidden="true"></i></button>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  
+                </div></div>
+    </div>
     <div class="doctors-main" style="padding-bottom: 75px;">
         <!-- Three Line List with secondary info and action -->
         <style>
@@ -94,11 +306,11 @@
         </style>
         
         <ul class="demo-list-three mdl-list">
-          <li class="mdl-list__item mdl-list__item--three-line">
-            <span class="mdl-list__item-primary-content">
-              <i class="material-icons mdl-list__item-avatar">person</i>
-              <span style="color: white;">Dr. Juan Antonio Acuña</span>
-              <span class="mdl-list__item-text-body" style="color: white;">
+            <li class="mdl-list__item mdl-list__item--three-line docdoc" style="height: 200px">
+                <span class="mdl-list__item-primary-content">
+                  <img src="doc3.jpg" style="width:75px">
+              <span style="color: black;">Dr. Juan Antonio Acuña</span>
+              <span class="mdl-list__item-text-body" style="color: black;">
                 Urólogo<br>
                 8182258006<br>
                 Miguel Hidalgo #2521
@@ -108,11 +320,11 @@
               <a class="mdl-list__item-secondary-action" href="#"><i class="material-icons">star</i><i class="material-icons">star</i><i class="material-icons">star</i><i class="material-icons">star</i></a>
             </span>
           </li>
-          <li class="mdl-list__item mdl-list__item--three-line">
+          <li class="mdl-list__item mdl-list__item--three-line docdoc" style="height: 200px">
             <span class="mdl-list__item-primary-content">
-              <i class="material-icons mdl-list__item-avatar">person</i>
-              <span style="color: white;">Dr. Juan Carlos Guzmán</span>
-              <span class="mdl-list__item-text-body" style="color: white;">
+              <img src="doc4.jpg" style="width:75px">
+              <span style="color: black;">Dr. Juan Carlos Guzmán</span>
+              <span class="mdl-list__item-text-body" style="color: black;">
                 Ginecologo<br>
                 8181230294<br>
                 Miguel Hidalgo #1828, Poniente
@@ -122,11 +334,11 @@
               <a class="mdl-list__item-secondary-action" href="#"><i class="material-icons">star</i><i class="material-icons">star</i><i class="material-icons">star</i><i class="material-icons">star</i></a>
             </span>
           </li>
-          <li class="mdl-list__item mdl-list__item--three-line">
-            <span class="mdl-list__item-primary-content">
-              <i class="material-icons mdl-list__item-avatar">person</i>
-              <span style="color: white;">Dr. Roberto Garza Cortes</span>
-              <span class="mdl-list__item-text-body" style="color: white;">
+          <li class="mdl-list__item mdl-list__item--three-line docdoc" style="height: 200px">
+              <span class="mdl-list__item-primary-content">
+                <img src="doc6.jpg" style="width:75px">
+              <span style="color: black;">Dr. Roberto Garza Cortes</span>
+              <span class="mdl-list__item-text-body" style="color: black;">
                 Urólogo<br>
                 8120444400<br>
                 Río San Juan #200
@@ -136,11 +348,11 @@
               <a class="mdl-list__item-secondary-action" href="#"><i class="material-icons">star</i><i class="material-icons">star</i><i class="material-icons">star</i><i class="material-icons">star</i></a>
             </span>
           </li>
-          <li class="mdl-list__item mdl-list__item--three-line">
-            <span class="mdl-list__item-primary-content">
-              <i class="material-icons mdl-list__item-avatar">person</i>
-              <span style="color: white;">Dra. Heidi Gómez Juaréz</span>
-              <span class="mdl-list__item-text-body" style="color: white;">
+          <li class="mdl-list__item mdl-list__item--three-line docdoc" style="height: 200px">
+              <span class="mdl-list__item-primary-content">
+                <img src="doc5.jpg" style="width:75px">
+              <span style="color: black;">Dra. Heidi Gómez Juaréz</span>
+              <span class="mdl-list__item-text-body" style="color: black;">
                 Ginecologa<br>
                 8119700700<br>
                 Calle Ecuador #2331
@@ -150,11 +362,11 @@
               <a class="mdl-list__item-secondary-action" href="#"><i class="material-icons">star</i><i class="material-icons">star</i><i class="material-icons">star</i><i class="material-icons">star</i></a>
             </span>
           </li>
-          <li class="mdl-list__item mdl-list__item--three-line">
-            <span class="mdl-list__item-primary-content">
-              <i class="material-icons mdl-list__item-avatar">person</i>
-              <span style="color: white;">Dr. Juan Antonio Acuña</span>
-              <span class="mdl-list__item-text-body" style="color: white;">
+          <li class="mdl-list__item mdl-list__item--three-line docdoc" style="height: 200px">
+              <span class="mdl-list__item-primary-content">
+                <img src="doc3.jpg" style="width:75px">
+              <span style="color: black;">Dr. Juan Antonio Acuña</span>
+              <span class="mdl-list__item-text-body" style="color: black;">
                 Urólogo<br>
                 8182258006<br>
                 Miguel Hidalgo #2521
@@ -164,11 +376,11 @@
               <a class="mdl-list__item-secondary-action" href="#"><i class="material-icons">star</i><i class="material-icons">star</i><i class="material-icons">star</i><i class="material-icons">star</i></a>
             </span>
           </li>
-          <li class="mdl-list__item mdl-list__item--three-line">
-            <span class="mdl-list__item-primary-content">
-              <i class="material-icons mdl-list__item-avatar">person</i>
-              <span style="color: white;">Dra. Josefina Morín</span>
-              <span class="mdl-list__item-text-body" style="color: white;">
+          <li class="mdl-list__item mdl-list__item--three-line docdoc" style="height: 200px">
+              <span class="mdl-list__item-primary-content">
+                <img src="doc1.jpg" style="width:75px">
+              <span style="color: black;">Dra. Josefina Morín</span>
+              <span class="mdl-list__item-text-body" style="color: black;">
                 Urologa<br>
                 8183478625<br>
                 Jose Benitez #2704
@@ -178,11 +390,11 @@
               <a class="mdl-list__item-secondary-action" href="#"><i class="material-icons">star</i><i class="material-icons">star</i><i class="material-icons">star</i><i class="material-icons">star</i></a>
             </span>
           </li>
-          <!--<li class="mdl-list__item mdl-list__item--three-line">
+          <!--<li class="mdl-list__item mdl-list__item--three-line" style="margin-bottom: 20px;">
             <span class="mdl-list__item-primary-content">
               <i class="material-icons mdl-list__item-avatar">person</i>
-              <span style="color: white;">Dr. Luis Carlos Reyes Guajardo</span>
-              <span class="mdl-list__item-text-body" style="color: white;">
+              <span style="color: black;">Dr. Luis Carlos Reyes Guajardo</span>
+              <span class="mdl-list__item-text-body" style="color: black;">
                 Ginecólogo<br>
                 8181231339<br>
                 Miguel Hidalgo #1828
@@ -192,11 +404,11 @@
               <a class="mdl-list__item-secondary-action" href="#"><i class="material-icons">star</i><i class="material-icons">star</i><i class="material-icons">star</i><i class="material-icons">star</i></a>
             </span>
           </li>-->
-          <li class="mdl-list__item mdl-list__item--three-line">
-            <span class="mdl-list__item-primary-content">
-              <i class="material-icons mdl-list__item-avatar">person</i>
-              <span style="color: white;">Dra. Lourdes Casas</span>
-              <span class="mdl-list__item-text-body" style="color: white;">
+          <li class="mdl-list__item mdl-list__item--three-line docdoc" style="height: 200px">
+              <span class="mdl-list__item-primary-content">
+                <img src="doc2.jpg" style="width:75px">
+              <span style="color: black;">Dra. Lourdes Casas</span>
+              <span class="mdl-list__item-text-body" style="color: black;">
                 Ginecologa<br>
                 8183598789<br>
                 Playa Mocambo #3550
@@ -206,11 +418,11 @@
               <a class="mdl-list__item-secondary-action" href="#"><i class="material-icons">star</i><i class="material-icons">star</i><i class="material-icons">star</i><i class="material-icons">star</i></a>
             </span>
           </li>
-          <!--<li class="mdl-list__item mdl-list__item--three-line">
+          <!--<li class="mdl-list__item mdl-list__item--three-line" style="margin-bottom: 20px;">
             <span class="mdl-list__item-primary-content">
               <i class="material-icons mdl-list__item-avatar">person</i>
-              <span style="color: white;">Dra. Edith Patricia Regalado Briz</span>
-              <span class="mdl-list__item-text-body" style="color: white;">
+              <span style="color: black;">Dra. Edith Patricia Regalado Briz</span>
+              <span class="mdl-list__item-text-body" style="color: black;">
                 Ginecologa<br>
                 8183401524<br>
                 Hidalgo #2425, Poniente, Consultorio 702 B
@@ -220,11 +432,11 @@
               <a class="mdl-list__item-secondary-action" href="#"><i class="material-icons">star</i><i class="material-icons">star</i><i class="material-icons">star</i><i class="material-icons">star</i></a>
             </span>
           </li>-->
-          <li class="mdl-list__item mdl-list__item--three-line">
-            <span class="mdl-list__item-primary-content">
-              <i class="material-icons mdl-list__item-avatar">person</i>
-              <span style="color: white;">Dra. Erika Arce Sierra</span>
-              <span class="mdl-list__item-text-body" style="color: white;">
+          <li class="mdl-list__item mdl-list__item--three-line docdoc" style="height: 200px">
+              <span class="mdl-list__item-primary-content">
+                <img src="doc1.jpg" style="width:75px">
+              <span style="color: black;">Dra. Erika Arce Sierra</span>
+              <span class="mdl-list__item-text-body" style="color: black;">
                 Ginecologa<br>
                 8121382550<br>
                 Ecuador #2331, Piso 8, No. Int 818
@@ -234,11 +446,11 @@
               <a class="mdl-list__item-secondary-action" href="#"><i class="material-icons">star</i><i class="material-icons">star</i><i class="material-icons">star</i><i class="material-icons">star</i></a>
             </span>
           </li>
-          <li class="mdl-list__item mdl-list__item--three-line">
-            <span class="mdl-list__item-primary-content">
-              <i class="material-icons mdl-list__item-avatar">person</i>
-              <span style="color: white;">Dra Ma. Esther Garza</span>
-              <span class="mdl-list__item-text-body" style="color: white;">
+          <li class="mdl-list__item mdl-list__item--three-line docdoc" style="height: 200px">
+              <span class="mdl-list__item-primary-content">
+                <img src="doc3.jpg" style="width:75px">
+              <span style="color: black;">Dra Ma. Esther Garza</span>
+              <span class="mdl-list__item-text-body" style="color: black;">
                 Urologa<br>
                 8117440017<br>
                 Bellisario Domínguez #2439
@@ -248,11 +460,11 @@
               <a class="mdl-list__item-secondary-action" href="#"><i class="material-icons">star</i><i class="material-icons">star</i><i class="material-icons">star</i><i class="material-icons">star</i></a>
             </span>
           </li>
-          <li class="mdl-list__item mdl-list__item--three-line">
-            <span class="mdl-list__item-primary-content">
-              <i class="material-icons mdl-list__item-avatar">person</i>
-              <span style="color: white;">Dra. Rocío I. Luna Quiroga</span>
-              <span class="mdl-list__item-text-body" style="color: white;">
+          <li class="mdl-list__item mdl-list__item--three-line docdoc" style="height: 200px">
+              <span class="mdl-list__item-primary-content">
+                <img src="doc6.jpg" style="width:75px">
+              <span style="color: black;">Dra. Rocío I. Luna Quiroga</span>
+              <span class="mdl-list__item-text-body" style="color: black;">
                 Ginecologa<br>
                 8181234961<br>
                 Av. Constitución #1881, Poniente
@@ -262,11 +474,11 @@
               <a class="mdl-list__item-secondary-action" href="#"><i class="material-icons">star</i><i class="material-icons">star</i><i class="material-icons">star</i><i class="material-icons">star</i></a>
             </span>
           </li>
-          <li class="mdl-list__item mdl-list__item--three-line">
-            <span class="mdl-list__item-primary-content">
-              <i class="material-icons mdl-list__item-avatar">person</i>
-              <span style="color: white;">Dr. Juan Antonio Acuña</span>
-              <span class="mdl-list__item-text-body" style="color: white;">
+          <li class="mdl-list__item mdl-list__item--three-line docdoc" style="height: 200px">
+              <span class="mdl-list__item-primary-content">
+                <img src="doc3.jpg" style="width:75px">
+              <span style="color: black;">Dr. Juan Antonio Acuña</span>
+              <span class="mdl-list__item-text-body" style="color: black;">
                 Urologo<br>
                 8182258006<br>
                 Miguel Hidalgo #2521
@@ -279,41 +491,70 @@
         </ul>
     </div>
     <div class="products-main">
-            <table class="mdl-data-table mdl-js-data-table mdl-data-table--selectable mdl-shadow--2dp">
-                    <thead>
-                      <tr>
-                        <th class="mdl-data-table__cell--non-numeric">Material</th>
-                        <th>Quantity</th>
-                        <th>Unit price</th>
-                      </tr>
-                    </thead>
-                    <tbody>
-                      <tr>
-                        <td class="mdl-data-table__cell--non-numeric">Acrylic (Transparent)</td>
-                        <td>25</td>
-                        <td>$2.90</td>
-                      </tr>
-                      <tr>
-                        <td class="mdl-data-table__cell--non-numeric">Plywood (Birch)</td>
-                        <td>50</td>
-                        <td>$1.25</td>
-                      </tr>
-                      <tr>
-                        <td class="mdl-data-table__cell--non-numeric">Laminate (Gold on Blue)</td>
-                        <td>10</td>
-                        <td>$2.35</td>
-                      </tr>
-                    </tbody>
-                  </table>
+        <div class="grid">
+          <div class="module">
+            <div class="product-container">
+              <img src="condon1.jpg" class="product-img"/><br>
+
+            </div>
+            Trojan Pack 10<br>
+            Condón Masculino<br>
+            $449.00 MXN
+          </div>
+          <div class="module">
+            <img src="condon2.jpg" class="product-img"/><br>
+            Prudence Cabezón Pack 36<br>
+            Condón Masculino<br>
+            $349.00 MXN
+          </div>
+          <div class="module"><img src="condon3.jpg" class="product-img"/><br>
+            Sico Invisibles 90 Piezas<br>
+            Condón Masculino<br>
+            $959.00 MXN
+          </div>
+          <div class="module"><img src="condon4.jpg" class="product-img"/><br>
+            Playboy Preservativos Mix & Play<br>
+            Condón Masculino<br>
+            $139.50 MXN
+          </div>
+          <div class="module"><img src="condonf1.jpg" class="product-img"/><br>
+            Fc2 Látex<br>
+            Condón Femenino<br>
+            $77.00 MXN
+          </div>
+          <div class="module"><img src="condonf2.jpg" class="product-img"/><br>
+            Fc2 No Látex 30 piezas<br>
+            Condón Femenino<br>
+            $1,599.00 MXN
+          </div>
+          <div class="module"><img src="lamina1.jpg" class="product-img"/><br>
+            VCF 9 Piezas<br>
+            Láminas Femeninas<br>
+            $452.20 MXN
+          </div>
+          <div class="module"><img src="lamina2.jpg" class="product-img"/><br>
+            VCF 18 piezas<br>
+            Láminas Femeninas<br>
+            $849.00 MXN
+          </div>
+          <div class="module"><img src="lamina3.jpg" class="product-img"/><br>
+            VCF 3 piezas<br>
+            Láminas Femeninas<br>
+            $144.00 MXN
+          </div>
+          <div class="module"></div>
+          <div class="module"></div>
+          <div class="module"></div>
+        </div>
     </div>
     </main>
   <footer id="footer">
 		<ul class="social">
-            <li class="social_icon" id="home"><i class="fa fa-home" aria-hidden="true"></i></li>
+            <!--<li class="social_icon" id="home"><i class="fa fa-home" aria-hidden="true"></i></li>-->
             <li class="social_icon" id="doctor"><i class="fas fa-user-md"></i></li>
             <li class="social_icon" id="question"><i class="fas fa-question"></i></li>
             <li class="social_icon" id="pills"><i class="fas fa-pills"></i></li>
-            <li class="social_icon" id="profile"><i class="fa fa-user" aria-hidden="true"></i></li>
+            <!--<li class="social_icon" id="profile"><i class="fa fa-user" aria-hidden="true"></i></li>-->
 		</ul>
     </footer>
     <script src="index.js" type="text/javascript"></script>
